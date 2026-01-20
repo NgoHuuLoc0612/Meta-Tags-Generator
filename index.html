@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tags Generator</title>
+    
+    <!-- External CDN Libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css" rel="stylesheet">
+    
+    <!-- Internal Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <i class="fas fa-tags"></i>
+                        <h1>Meta Tags Generator</h1>
+                        <span class="version">v1.0</span>
+                    </div>
+                    <nav class="header-nav">
+                        <button class="btn-icon" id="themeToggle" title="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button class="btn-icon" id="resetAll" title="Reset All">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                        <button class="btn-icon" id="exportConfig" title="Export Configuration">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn-icon" id="importConfig" title="Import Configuration">
+                            <i class="fas fa-upload"></i>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="content-grid">
+                    <!-- Left Sidebar - Navigation -->
+                    <aside class="sidebar">
+                        <div class="sidebar-sticky">
+                            <h3>Meta Categories</h3>
+                            <nav class="category-nav" id="categoryNav">
+                                <button class="category-item active" data-category="basic">
+                                    <i class="fas fa-info-circle"></i> Basic Meta
+                                </button>
+                                <button class="category-item" data-category="seo">
+                                    <i class="fas fa-search"></i> SEO Meta
+                                </button>
+                                <button class="category-item" data-category="opengraph">
+                                    <i class="fab fa-facebook"></i> Open Graph
+                                </button>
+                                <button class="category-item" data-category="twitter">
+                                    <i class="fab fa-twitter"></i> Twitter Cards
+                                </button>
+                                <button class="category-item" data-category="schema">
+                                    <i class="fas fa-code"></i> Schema.org
+                                </button>
+                                <button class="category-item" data-category="advanced">
+                                    <i class="fas fa-cogs"></i> Advanced
+                                </button>
+                                <button class="category-item" data-category="mobile">
+                                    <i class="fas fa-mobile-alt"></i> Mobile/PWA
+                                </button>
+                                <button class="category-item" data-category="social">
+                                    <i class="fas fa-share-alt"></i> Social Media
+                                </button>
+                            </nav>
+                        </div>
+                    </aside>
+
+                    <!-- Center - Form Sections -->
+                    <section class="form-section">
+                        <div id="formContainer"></div>
+                    </section>
+
+                    <!-- Right Sidebar - Preview & Output -->
+                    <aside class="preview-section">
+                        <div class="preview-sticky">
+                            <div class="preview-header">
+                                <h3>Generated Code</h3>
+                                <div class="preview-actions">
+                                    <button class="btn-sm" id="copyCode">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                    <button class="btn-sm" id="downloadHtml">
+                                        <i class="fas fa-file-code"></i> Download
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="code-preview">
+                                <pre><code id="codeOutput" class="language-html"></code></pre>
+                            </div>
+                            
+                            <div class="preview-section-divider"></div>
+                            
+                            <div class="preview-header">
+                                <h3>Live Preview</h3>
+                                <select id="previewType" class="preview-select">
+                                    <option value="google">Google Search</option>
+                                    <option value="facebook">Facebook</option>
+                                    <option value="twitter">Twitter</option>
+                                    <option value="linkedin">LinkedIn</option>
+                                </select>
+                            </div>
+                            <div class="live-preview" id="livePreview"></div>
+                            
+                            <div class="stats-section">
+                                <h4>Meta Statistics</h4>
+                                <div id="metaStats"></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="container">
+                <p>&copy; 2026 Meta Tags Generator</p>
+            </div>
+        </footer>
+
+        <!-- Modals -->
+        <div id="modalContainer"></div>
+        
+        <!-- Toast Notifications -->
+        <div id="toastContainer" class="toast-container"></div>
+    </div>
+
+    <!-- External CDN Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.11.0/validator.min.js"></script>
+    
+    <!-- Scripts-->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
